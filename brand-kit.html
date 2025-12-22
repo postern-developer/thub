@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Kit | Terramonga Hub</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=La+Belle+Aurore&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        /* Colors */
+        --green: oklch(58% 0.05 159);
+        --light-sand: oklch(92% 0.02 74);
+        --blue: oklch(43% 0.07 245);
+        --terracotta: oklch(69% 0.08 47);
+        --brown: oklch(65% 0.04 60);
+        --light-cream: oklch(99% 0.01 90);
+
+        /* Typography */
+        --font-heading: "Fraunces", serif;
+        --font-body: "Nunito", sans-serif;
+        --font-accent: "La Belle Aurore", cursive;
+
+        /* Utility */
+        --text-main: color-mix(in oklch, var(--brown), black 30%);
+        --heading-main: color-mix(in oklch, var(--green), black 30%);
+        --sub-headings: color-mix(in oklch, var(--terracotta), black 18%);
+      }
+      /* CSS Reset */
+      * {
+        margin: 0;
+      }
+
+      body {
+        background-color: var(--light-cream);
+        color: var(--text-main);
+        font-family: var(--font-body);
+        line-height: 1.6;
+        margin: 0;
+      }
+      p {
+        margin-bottom: 0.8em;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 60px;
+        border-bottom: 2px solid var(--light-sand);
+        padding-bottom: 20px;
+      }
+
+      h1 {
+        font-family: var(--font-heading);
+        color: var(--heading-main);
+        font-size: 3rem;
+        font-weight: 700;
+      }
+
+      .tagline {
+        font-family: var(--font-accent);
+        color: var(--terracotta);
+        font-size: 1.6rem;
+      }
+
+      section {
+        margin-bottom: 50px;
+      }
+
+      h2 {
+        font-family: var(--font-heading);
+        color: var(--heading-main);
+        font-size: 2rem;
+        padding-bottom: 10px;
+      }
+
+      h3 {
+        font-family: var(--font-heading);
+        color: var(--sub-headings);
+        margin-bottom: 0.5em;
+        font-size: 1.5em;
+      }
+
+      .logo-stacked {
+        width: 60%;
+        padding: 2em;
+      }
+      /* Color Grid Styles */
+      .color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 20px;
+      }
+
+      .swatch {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .tile {
+        height: 100px;
+        width: 100%;
+      }
+
+      .info {
+        padding: 12px;
+        font-size: 0.85rem;
+      }
+
+      .info strong {
+        display: block;
+      }
+
+      /* Typography Showcase */
+      .type-sample {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid var(--light-sand);
+      }
+
+      .accent-text {
+        font-family: var(--font-accent);
+        color: var(--blue);
+        font-size: 1.4rem;
+        letter-spacing: -1px;
+      }
+
+      /* Classes for Swatches */
+      .bg-green {
+        background-color: var(--green);
+      }
+      .bg-sand {
+        background-color: var(--light-sand);
+      }
+      .bg-blue {
+        background-color: var(--blue);
+      }
+      .bg-terra {
+        background-color: var(--terracotta);
+      }
+      .bg-brown {
+        background-color: var(--brown);
+      }
+      .bg-cream {
+        background-color: var(--light-cream);
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Terramonga Hub</h1>
+        <div class="tagline">Local food from family farms</div>
+      </header>
+      <section>
+        <h2>Logos</h2>
+        <div class="color-grid">
+          <div class="swatch">
+            <img
+              src="images/Terramonga-Hub_Logo-Full.png"
+              alt="Terramonga Hub logo"
+              class="logo-stacked"
+            />
+
+          <div class="info"><strong>Stacked Logo</strong></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Color Palette</h2>
+        <div class="color-grid">
+          <div class="swatch">
+            <div class="tile bg-green"></div>
+            <div class="info"><strong>Green</strong>#608E73</div>
+          </div>
+          <div class="swatch">
+            <div class="tile bg-sand"></div>
+            <div class="info"><strong>Light Sand</strong>#F1E6D9</div>
+          </div>
+          <div class="swatch">
+            <div class="tile bg-blue"></div>
+            <div class="info"><strong>Blue</strong>#3E6086</div>
+          </div>
+          <div class="swatch">
+            <div class="tile bg-terra"></div>
+            <div class="info"><strong>Terracotta</strong>#CB997E</div>
+          </div>
+          <div class="swatch">
+            <div class="tile bg-brown"></div>
+            <div class="info"><strong>Brown</strong>#AF9784</div>
+          </div>
+          <div class="swatch">
+            <div class="tile bg-cream"></div>
+            <div class="info"><strong>Light Cream</strong>#FFFDF4</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Typography Styles</h2>
+        <div class="type-sample">
+          <h3>Fraunces: For Bold, Inviting Headings</h3>
+          <p>
+            <strong>Nunito: For warm and cozy body copy.</strong> This typeface
+            is rounded and friendly, ensuring that your mission statement is
+            easy and pleasant to read on any device.
+          </p>
+          <p class="accent-text">
+            La Belle Aurore: For that handcrafted, personal touch.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sample Brand Narrative</h2>
+        <p>
+          Terramonga Hub sources local food from family farms across Western
+          North Carolina and delivers to your home each week. Joe and Elaina
+          Sabbag founded Terramonga Farm in Fairview in 2018, starting with
+          vegetables and later adding sheep, chickens, pigs, and cattle.
+          <span class="accent-text"
+            >We believe in the unique power of food hubs</span
+          >
+          to aggregate and distribute local food and connect our community with
+          their local food sources.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
