@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brand Kit | Terramonga Hub</title>
+    <title>Brand Ki | Terramonga Hub</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,6 +49,7 @@
       }
       .container {
         max-width: 900px;
+        width: 92.5%;
         margin: 0 auto;
       }
 
@@ -70,6 +71,7 @@
         font-family: var(--font-accent);
         color: var(--terracotta);
         font-size: 1.6rem;
+        letter-spacing: -1px;
       }
 
       section {
@@ -137,6 +139,8 @@
         color: var(--blue);
         font-size: 1.4rem;
         letter-spacing: -1px;
+        display: inline-block;
+        padding-inline: 0.1em;
       }
 
       /* Classes for Swatches */
@@ -157,7 +161,13 @@
       }
       .bg-cream {
         background-color: var(--light-cream);
-        border: 1px solid #ddd;
+      }
+      /* Imagery */
+
+      .imagery img {
+        border-radius: 12px;
+        max-width: 350px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
       }
     </style>
   </head>
@@ -177,7 +187,8 @@
               class="logo-stacked"
             />
 
-          <div class="info"><strong>Stacked Logo</strong></div>
+            <div class="info"><strong>Stacked Logo</strong></div>
+          </div>
         </div>
       </section>
 
@@ -239,6 +250,11 @@
           to aggregate and distribute local food and connect our community with
           their local food sources.
         </p>
+      </section>
+      <section class="imagery">
+        <h2>Imagery</h2>
+        <img src="images/group-field.JPG" alt="" />
+        <img src="images/solo-person-field.JPG" alt="" />
       </section>
     </div>
   </body>
