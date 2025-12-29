@@ -106,19 +106,38 @@ ul {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.45)),
-    url(images/thub-farm-hero.jpg);
+  position: relative;
   min-height: 65vh;
-  height: auto;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2em;
-  padding: 2em;
+  text-align: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/thub-farm-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.8) saturate(1.5);
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: overlay;
+  z-index: 1;
+}
+
+/* THE CONTENT LAYER */
+.hero > * {
+  position: relative;
+  z-index: 2; /* Forces everything (logo, h1, button) above the background */
 }
 
 .hero h1 {
@@ -126,12 +145,15 @@ ul {
   font-size: clamp(1.8rem, 8vw, 4rem);
   max-width: 25ch;
   margin: 0;
+  /* Keep your shadow as a secondary safety net */
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
 }
 
 .hero img {
   width: 80%;
   max-width: 175px;
-  height: auto;
+  /* Your drop shadow stays sharp because it's not being 'filtered' by the parent */
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
 }
 
 /* Service Card Section */
