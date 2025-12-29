@@ -7,14 +7,14 @@
   --brown: #af9784;
   --light-cream: #fffdf4;
 
-  /* Functional Text Colors (Manually darkened for readability) */
+  /* Colors to Meet Accesibility */
   --text-main: #3d352e;
   --heading-main: #2d4538;
   --sub-headings: #8a573c;
 
   /* Typography */
   --font-heading: "Fraunces", serif;
-  --font-body: "Nunito", sans-serif;
+  --font-body: "Lora", serif;
   --font-accent: "La Belle Aurore", cursive;
 }
 
@@ -23,12 +23,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Global Styles */
@@ -46,50 +40,54 @@ h3,
 h4 {
   font-family: var(--font-heading);
   color: var(--heading-main);
-  line-height: 1.1;
+  line-height: 1.2;
   text-wrap: balance;
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2.2em;
+  font-size: clamp(2rem, 5vw, 2.5rem);
 }
-
 h3 {
-  color: var(--sub-headings);
+  font-size: 1.7rem;
+  color: var(--heading-main);
 }
 
 p {
   margin-bottom: 1.2em;
-  font-weight: 600;
-  font-size: 1.2em;
+  font-weight: 500;
+  font-size: 1.15rem;
+  text-wrap: pretty;
+  line-height: 1.7;
 }
 
-img,
-picture,
-svg {
+img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.accent-text {
-  font-family: var(--font-accent);
-  color: var(--blue);
-  font-size: 1.3em;
-  letter-spacing: -1px;
+ul li {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 0.8em;
+}
+
+ul {
+  padding-left: 1.2rem;
 }
 
 .button {
+  font-family: system-ui, sans-serif;
   display: inline-block;
   padding: 1rem 2.2rem;
-  background-color: var(--terracotta);
+  background-color: var(--blue);
   color: white;
   text-decoration: none;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-radius: 50px;
-  border: 2px solid transparent;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -99,7 +97,7 @@ svg {
   background-color: var(--heading-main);
   color: var(--light-cream);
   transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Shadow deepens as it lifts */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .button:active {
@@ -108,8 +106,8 @@ svg {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url(images/solo-person-field.JPG);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.45)),
+    url(images/thub-farm-hero.jpg);
   min-height: 65vh;
   height: auto;
   background-size: cover;
@@ -139,13 +137,9 @@ svg {
 /* Service Card Section */
 .services {
   text-align: center;
-  padding: 3em;
+  padding: 2em;
   max-width: 1400px;
   margin: auto;
-}
-
-.services h2 {
-  font-size: clamp(2rem, 5vw, 2.5rem);
 }
 
 .services p {
@@ -161,26 +155,12 @@ svg {
   margin: 0 auto;
 }
 
-/* --- THE 2-COLUMN MAGIC --- */
-@media (max-width: 850px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-    padding: 2rem 1.5rem;
-    gap: 1.5rem;
-  }
-
-  .services {
-    padding-top: 2rem;
-  }
-}
-
-/* Individual Card Styling */
 .card {
   background: white;
-  border-radius: 20px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
@@ -189,7 +169,6 @@ svg {
   transform: translateY(-10px);
 }
 
-/* Image Container */
 .card-image {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -201,31 +180,20 @@ svg {
   height: 100%;
   object-fit: cover;
 }
-
-/* Content Area */
 .card-content {
-  padding: 2.5rem;
+  padding: 2em;
+  text-align: left;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  text-align: left;
 }
-
-.card-content h3 {
-  font-size: 1.5rem;
-  color: var(--heading-main);
-}
-
 .card-content p {
-  color: var(--text-main);
-  margin-bottom: 2rem;
   flex-grow: 1;
 }
-
 .card-content .button {
   align-self: flex-start;
 }
-/* Pullquote CTA Section */
+/* Pullquote Section */
 .pullquote-cta {
   background-color: var(--blue);
   background-image: linear-gradient(
@@ -234,7 +202,7 @@ svg {
     ),
     url("images/thub-farm-bg-bw.jpeg");
   background-size: cover;
-  background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   color: var(--light-cream);
   padding: 5rem 2rem;
@@ -273,20 +241,13 @@ svg {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  text-align: left;
-}
-
-.founder-photo {
-  width: 120px;
-  border-radius: 50%;
-  border: 3px solid var(--light-sand);
-  object-fit: cover;
+  text-align: center;
 }
 
 .founder-details cite {
   display: block;
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-style: normal;
   font-weight: 700;
 }
@@ -301,7 +262,7 @@ svg {
 
 /* Big Card / Resiliency Section */
 .resiliency-section {
-  padding: 4rem 2rem;
+  padding: 3em 2em;
   margin: 0 auto;
   max-width: 1400px;
 }
@@ -347,20 +308,25 @@ svg {
   align-self: flex-start;
   margin-top: 1rem;
 }
+.big-card-content ul {
+  list-style: none; /* Hide default bullets */
+  padding: 0;
+  margin: 1.5rem 0;
+}
 
-/* Mobile Responsive Logic (Add this to your media queries at the bottom) */
-@media (max-width: 900px) {
-  .big-card {
-    flex-direction: column; /* Stacks image on top of text */
-  }
+.big-card-content li {
+  position: relative;
+  padding-left: 2.2em;
+}
 
-  .big-card-image {
-    min-height: 300px;
-  }
-
-  .big-card-content {
-    padding: 2.5rem 1.5rem;
-  }
+/* The Font Awesome Leaf */
+.big-card-content li::before {
+  content: "\f06c"; /* This is the Unicode for fa-leaf */
+  font-family: "Font Awesome 6 Free";
+  color: var(--green); /* Uses your brand green */
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
 }
 
 /* Footer Section */
@@ -377,8 +343,8 @@ svg {
 }
 
 .footer p {
-  margin: 0; /* Override the default paragraph margin */
-  font-family: var(--font-body);
+  margin: 0;
+  font-family: sans-serif;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-size: 0.9rem;
@@ -390,7 +356,6 @@ svg {
 }
 
 .social-footer a {
-  text-decoration: none;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -400,9 +365,34 @@ svg {
 }
 
 .social-footer a:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .social-footer a:hover i {
-  color: var(--terracotta);
+  color: var(--text-main);
+}
+
+/* Media Queries */
+
+@media (max-width: 850px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .services {
+    padding-top: 2rem;
+  }
+
+  .big-card {
+    flex-direction: column;
+  }
+
+  .big-card-image {
+    min-height: 300px;
+  }
+
+  .big-card-content {
+    padding: 2.5rem 1.5rem;
+  }
 }
